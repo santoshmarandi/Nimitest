@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px; /* Reduced from 23px */
+}
+
+header {
+    background-color: #0033a0;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 19px; /* Reduced from 24px */
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 11px; /* Reduced from 16px */
+}
+
+main {
+    padding: 20px;
+}
+
+.quiz-header {
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.quiz-header h2 {
+    font-size: 15px; /* Reduced from 20px */
+}
+
+.timer-score {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    font-size: 13px; /* Reduced from 18px */
+}
+
+.question {
+    background-color: #e6f3ff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.question h3 {
+    font-size: 22px; /* Reduced from 27px */
+    margin-bottom: 15px;
+}
+
+.options {
+    margin: 10px 0;
+}
+
+.option-label {
+    display: block;
+    background-color: white;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.option-text {
+    margin-left: 5px;
+    font-size: 20px; /* Reduced from 25px */
+}
+
+.correct-answer {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.incorrect-answer {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+.status {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 18px; /* Reduced from 23px */
+}
+
+.not-attempted {
+    color: #666;
+}
+
+.topic-link {
+    display: block;
+    background-color: white;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #0033a0;
+    font-size: 20px; /* Reduced from 25px */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.topic-link:hover {
+    background-color: #d9e6ff;
+}
+
+#submit-btn {
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px; /* Reduced from 25px */
+    width: 100%;
+    margin-top: 20px;
+}
+
+#submit-btn:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.result-box {
+    background-color: #e6f3ff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px; /* Reduced from 23px */
+}
+
+.result-box h2 {
+    font-size: 24px; /* Reduced from 29px */
+    margin-bottom: 10px;
+}
+
+.result-box p {
+    margin-bottom: 5px;
+    font-size: 18px; /* Reduced from 23px */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 11px; /* Reduced from 16px */
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        font-size: 16px; /* Reduced from 21px */
+    }
+    header {
+        border-radius: 0;
+    }
+    .logo {
+        width: 40px;
+    }
+    header h1 {
+        font-size: 17px; /* Reduced from 20px */
+    }
+    header p {
+        font-size: 9px; /* Reduced from 14px */
+    }
+    .quiz-header h2 {
+        font-size: 13px; /* Reduced from 18px */
+    }
+    .timer-score {
+        font-size: 11px; /* Reduced from 16px */
+    }
+    .question {
+        padding: 10px;
+    }
+    .question h3 {
+        font-size: 20px; /* Reduced from 25px */
+    }
+    .option-label {
+        padding: 8px;
+    }
+    .option-text {
+        font-size: 18px; /* Reduced from 23px */
+    }
+    .status {
+        font-size: 16px; /* Reduced from 21px */
+    }
+    .topic-link {
+        font-size: 18px; /* Reduced from 23px */
+        padding: 10px 15px;
+    }
+    #submit-btn {
+        font-size: 18px; /* Reduced from 23px */
+        padding: 10px 20px;
+    }
+    .result {
+        height: auto;
+        position: static;
+    }
+    .result-box {
+        width: 85%;
+        padding: 15px;
+        font-size: 16px; /* Reduced from 21px */
+    }
+    .result-box h2 {
+        font-size: 22px; /* Reduced from 27px */
+    }
+    .result-box p {
+        font-size: 16px; /* Reduced from 21px */
+    }
+    footer {
+        font-size: 9px; /* Reduced from 14px */
+    }
+}

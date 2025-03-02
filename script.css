@@ -1,0 +1,9 @@
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+function goBack() {
+    window.location.href = '../index.html'; // Go back to the homepage
+}

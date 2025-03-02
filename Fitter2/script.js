@@ -92,7 +92,7 @@ function startTimer() {
 }
 
 function goBack() {
-    window.location.href = 'Nimitest/index.html'; // Adjust this to your actual topics page URL
+    window.location.href = '../index.html'; // Adjust this to your actual topics page URL
 }
 
 function submitQuiz() {

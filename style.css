@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #eef2f7;
+    color: var(--dark-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+.progress-container {
+    margin-bottom: 2rem;
+    background-color: var(--light-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.progress-bar {
+    background-color: #e9ecef;
+    border-radius: 5px;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+.progress {
+    background-color: var(--success-color);
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+.quiz-container {
+    text-align: center;
+}
+
+.question-card {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+}
+
+.question-card p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.question-card h2 {
+    font-size: 4rem;
+    color: var(--dark-color);
+    margin-top: 0.5rem;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.option-btn {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.option-btn.correct {
+    background-color: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+}
+
+.option-btn.incorrect {
+    background-color: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.feedback {
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-height: 2rem;
+    margin-bottom: 1rem;
+}
+
+#next-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+#next-btn:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.controls-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.controls-container h2 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.character-type-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.character-type-selector label {
+    cursor: pointer;
+}
+
+#reset-progress-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+#reset-progress-btn:hover {
+    background-color: #c82333;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--light-color);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .question-card h2 {
+        font-size: 3rem;
+    }
+    .option-btn {
+        font-size: 2rem;
+    }
+}

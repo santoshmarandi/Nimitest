@@ -3,74 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITI 2nd Year Study Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bengali Script Learner</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="header-content">
-                
-                <h1>ITI 2nd Year Study Hub</h1>
-                <p>Your one-stop resource for notes, MCQs, and previous year questions.</p>
-            </div>
-            <nav>
-                <button class="nav-btn" onclick="scrollToSection('subjects')">Subjects</button>
-                <button class="nav-btn" onclick="scrollToSection('resources')">Resources</button>
-                <button class="nav-btn" onclick="scrollToSection('about')">About</button>
-            </nav>
+            <h1>Bengali Script Learner</h1>
+            <p>Learn the Bengali script by matching Hindi letters to their Bengali counterparts.</p>
         </header>
 
         <main>
-            <section id="hero">
-                <h2>Welcome to ITI Study Hub</h2>
-                <p>Explore comprehensive study material for ITI 2nd Year Fitter Trade.</p>
-               
-            </section>
-
-            <section id="subjects">
-                <h2>Subjects</h2>
-                <div class="subject-grid">
-                    <div class="subject-card">
-                        <h3>Fitter Theory</h3>
-                        <p>Global ITI live class notes, MCQs, and question banks.</p>
-                        <a href="fitter theory/index.html" class="card-link">Explore</a>
-                    </div>
-                    <div class="subject-card">
-                        <h3>Workshop Calculation</h3>
-                        <p>Formulas, examples, and practice questions.</p>
-                        <a href="workshop calculation/index.html" class="card-link">Explore</a>
-                    </div>
-                    <div class="subject-card">
-                        <h3>Engineering Drawing</h3>
-                        <p>Diagrams, sketches, and exercises.</p>
-                        <a href="engineering drawing/index.html" class="card-link">Explore</a>
-                    </div>
-                    <div class="subject-card">
-                        <h3>Employability Skills</h3>
-                        <p>Soft skills and interview prep.</p>
-                        <a href="employability skills/index.html" class="card-link">Explore</a>
-                    </div>
+            <div class="progress-container">
+                <h2>Your Progress</h2>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
                 </div>
-            </section>
+                <p id="progress-text">0%</p>
+            </div>
 
-            <section id="resources">
-               
-                <div class="resource-grid">
-                    <!-- Removed Notes, MCQ Question Bank, and Previous Year Questions -->
+            <div class="quiz-container">
+                <div class="question-card">
+                    <p>The Hindi letter is:</p>
+                    <h2 id="question"></h2>
                 </div>
-            </section>
 
-            <section id="about">
-                <h2>About This Hub</h2>
-                <p>This platform is designed to help ITI 2nd-year students excel in their studies with organized, high-quality resources. Prepared by Santosh Marandi, inspired by NIMI Bharat Skill.</p>
-            </section>
+                <div class="options-grid" id="options">
+                    <!-- Options will be dynamically inserted here -->
+                </div>
+
+                <div class="feedback" id="feedback">
+                    <!-- Feedback will be shown here -->
+                </div>
+
+                <button id="next-btn" class="hidden">Next Question</button>
+            </div>
+
+            <div class="controls-container">
+                <h2>Lesson Controls</h2>
+                <div class="character-type-selector">
+                    <label><input type="checkbox" id="vowels-checkbox" checked> Vowels</label>
+                    <label><input type="checkbox" id="consonants-checkbox" checked> Consonants</label>
+                    <label><input type="checkbox" id="matras-checkbox"> Matras (Vowel Signs)</label>
+                    <label><input type="checkbox" id="signs-checkbox"> Signs</label>
+                </div>
+                <button id="reset-progress-btn">Reset Progress</button>
+            </div>
         </main>
 
         <footer>
-            <p>Prepared by Santosh Marandi | Source: NIMI Bharat Skill | © 2025</p>
+            <p>Created with AI assistance.</p>
         </footer>
     </div>
-    <script src="scripts.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91a05efa6dadbd3c',t:'MTc0MDkxMzAyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <script src="script.js"></script>
+</body>
 </html>

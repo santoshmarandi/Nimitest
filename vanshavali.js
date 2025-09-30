@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const margin = { top: 20, right: 120, bottom: 20, left: 120 };
-        const width = 960 - margin.right - margin.left;
+        const margin = { top: 40, right: 20, bottom: 40, left: 20 };
+        const width = 960 - margin.left - margin.right;
         const height = 500 - margin.top - margin.bottom;
 
         const svg = d3.select(treeContainer).append('svg')
@@ -76,14 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .attr('transform', `translate(${margin.left},${margin.top})`);
 
         const root = d3.hierarchy(familyData[0]);
-        const treeLayout = d3.tree().size([height, width]);
+        const treeLayout = d3.tree().size([width, height]); // Use [width, height] for vertical layout
         const treeData = treeLayout(root);
 
         const nodes = treeData.descendants();
         const links = treeData.links();
-
-        // Normalize for fixed-depth.
-        nodes.forEach(d => { d.y = d.depth * 180 });
 
         // Links
         svg.selectAll('.link')
@@ -91,9 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .enter()
             .append('path')
             .attr('class', 'link')
-            .attr('d', d3.linkHorizontal()
-                .x(d => d.y)
-                .y(d => d.x));
+            .attr('d', d3.linkVertical() // Use vertical links
+                .x(d => d.x)
+                .y(d => d.y));
 
         // Nodes
         const node = svg.selectAll('.node')
@@ -101,15 +98,15 @@ document.addEventListener('DOMContentLoaded', () => {
             .enter()
             .append('g')
             .attr('class', 'node')
-            .attr('transform', d => `translate(${d.y},${d.x})`);
+            .attr('transform', d => `translate(${d.x},${d.y})`); // Swap translate order
 
         node.append('circle')
             .attr('r', 10);
 
         node.append('text')
             .attr('dy', '.35em')
-            .attr('x', d => d.children ? -13 : 13)
-            .style('text-anchor', d => d.children ? 'end' : 'start')
+            .attr('y', d => d.children ? -25 : 25) // Position text above or below
+            .style('text-anchor', 'middle') // Center text
             .text(d => d.data.name);
     }
 });
